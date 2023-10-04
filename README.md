@@ -1,0 +1,7 @@
+- Models will have DB schemas
+- Service will have all DB queries. Find insert update....
+- Component will have folders for drivers, orders, restuarants...
+- Each component will have controller and a route
+- Controller will have logic to call service function and it will be responsible for all request, response and rendering handle bar templates
+- Routes will have API route and it will call controller function
+- Routes folder will have one index folder which will be act like parent routing file
