@@ -32,7 +32,8 @@ app.use(
   }),
 );
 
-const CONNECTION_STRING = 'mongodb://127.0.0.1:27017/project-g11';
+const CONNECTION_STRING =
+  'mongodb+srv://dbUser:G9bJEcsNmJUHVIgS@cluster0.7zmdwoo.mongodb.net/project01?retryWrites=true&w=majority';
 mongoose.connect(CONNECTION_STRING);
 
 const db = mongoose.connection;
