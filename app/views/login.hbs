@@ -1,0 +1,32 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Driver Login</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+  </head>
+  <body class='loginPage'>
+    <div class='loginFormContainer'>
+      <h1>Login to get started</h1>
+      <form class='loginForm' action='/login' method='post'>
+        <div>
+          <label for='username'>Username</label>
+          <br />
+          <input type='text' name='username' />
+          <br /><br />
+          <label for='password'>Password</label>
+          <br />
+          <input type='text' name='password' />
+          <br /><br />
+        </div>
+        {{#if errMsg}}
+          {{errMsg}}
+        {{/if}}
+        <div class='loginBtnContainer'>
+          <button class='loginBtn' type='submit'>Login</button>
+        </div>
+      </form>
+      <a style='color: white;' href='/register'>Don't have a account? Create Account</a>
+    </div>
+  </body>
+</html>

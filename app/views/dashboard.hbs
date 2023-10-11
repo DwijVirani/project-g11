@@ -1,0 +1,59 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Dashboard</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+
+  </head>
+  <body>
+    {{#if errMsg}}
+      {{errMsg}}
+    {{/if}}
+
+    {{#if noOrderMsg}}
+      <h1>{{noOrderMsg}}</h1>
+    {{else}}
+      <table width='100%'>
+        <tr class='tableHeader'>
+          <th>
+            Order #
+          </th>
+          <th>
+            Customer Name
+          </th>
+          <th>
+            Delivery Address
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Accept Order
+          </th>
+        </tr>
+        {{#each orderList}}
+          <tr>
+            <td>
+              <span>{{this.order_number}}</span>
+            </td>
+            <td>
+              <span>{{this.user_name}}</span>
+            </td>
+            <td>
+              <span>{{this.delivery_address}}</span>
+            </td>
+            <td>
+              <span>{{this.status}}</span>
+            </td>
+            <td>
+              <form action='/update-status/{{this._id}}' method='post'>
+                <button type='submit'>Select Order</button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+    {{/if}}
+  </body>
+</html>

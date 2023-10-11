@@ -1,0 +1,70 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Driver Register</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+  </head>
+  <body class='loginPage'>
+    <div class='loginFormContainer'>
+      <h1>Create your driver account</h1>
+      <form class='registerForm' action='/register' method='post'>
+        <div class='formSubContainer'>
+          <div>
+            <h2>Driver Demogrpahics</h2>
+            <label for='full_name'>Full Name</label>
+            <br />
+            <input type='text' name='full_name' />
+            <br /><br />
+            <label for='email'>Email</label>
+            <br />
+            <input type='email' name='email' />
+            <br /><br />
+            <label for='phone'>Phone</label>
+            <br />
+            <input type='text' name='phone' />
+            <br /><br />
+            <label for='username'>Username</label>
+            <br />
+            <input type='text' name='username' />
+            <br /><br />
+            <label for='password'>Password</label>
+            <br />
+            <input type='password' name='password' />
+            <br /><br />
+            <label for='gender'>Gender:</label>
+            <select name='gender' id='gender'>
+              <option value='male'>Male</option>
+              <option value='female'>Female</option>
+              <option value='other'>Not specify</option>
+            </select>
+            <br /><br />
+          </div>
+          <div>
+            <h2>Vehicle Information</h2>
+            <label for='vehicle_model'>Vehicle Model</label>
+            <br />
+            <input type='text' name='vehicle_model' />
+            <br /><br />
+            <label for='vehicle_color'>Vehicle Color</label>
+            <br />
+            <input type='text' name='vehicle_color' />
+            <br /><br />
+            <label for='license_plate_number'>License Plate Number</label>
+            <br />
+            <input type='text' name='license_plate_number' />
+            <br /><br />
+          </div>
+        </div>
+        <div style='text-align: center; margin-bottom:20px'>
+          {{#if errMsg}}
+            <span style='color: crimson; text-align: center'>{{errMsg}}</span>
+          {{/if}}
+        </div>
+        <div class='loginBtnContainer'>
+          <button class='loginBtn' type='submit'>Register</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

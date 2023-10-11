@@ -1,0 +1,57 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Current Orders</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+
+  </head>
+  <body>
+    {{#if errMsg}}
+      <h1 style='color: white;'>{{errMsg}}</h1>
+    {{/if}}
+
+    {{#if noOrderMsg}}
+      <h1 style='color: white;'>{{noOrderMsg}}</h1>
+    {{else}}
+      <table width='100%'>
+        <tr class='tableHeader'>
+          <th>
+            Order #
+          </th>
+          <th>
+            Customer Name
+          </th>
+          <th>
+            Delivery Address
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Accept Order
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <span>{{orderData.order_number}}</span>
+          </td>
+          <td>
+            <span>{{orderData.user_name}}</span>
+          </td>
+          <td>
+            <span>{{orderData.delivery_address}}</span>
+          </td>
+          <td>
+            <span>{{orderData.status}}</span>
+          </td>
+          <td>
+            <form action='/mark-delivered/{{orderData._id}}' method='post'>
+              <button type='submit'>Mark as Delivered</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+    {{/if}}
+  </body>
+</html>
