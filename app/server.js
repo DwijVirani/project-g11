@@ -12,7 +12,7 @@ const {
   deliveryOrders,
   updateOrderStatus,
   getCurrentOrder,
-  markOrderAsDeliveredService,
+  markOrderDelivered,
 } = require('./components/orders/orders.controller');
 const { ensureLogin } = require('./middlewares/authorization');
 const { upload } = require('./middlewares/fileUpload');
@@ -76,7 +76,7 @@ app.get('/current-order', ensureLogin, async (req, res) => {
 });
 
 app.post('/mark-delivered/:id', [ensureLogin, upload.single('photo')], async (req, res) => {
-  markOrderAsDeliveredService(req, res);
+  markOrderDelivered(req, res);
 });
 const onHttpStart = () => {
   console.log(`Express web server running on port: ${HTTP_PORT}`);

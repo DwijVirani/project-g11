@@ -12,14 +12,17 @@ const deliveryOrdersService = async () => {
   }
 };
 
-const orderUpdateService = async (orderId, status, driverName) => {
+const orderUpdateService = async (orderId, status, driverName, licensePlatNumber) => {
   try {
     const existingOrder = await orderModel.findOne({ _id: orderId });
     if (!existingOrder) {
       throw Error('Order not found');
     }
 
-    const result = await orderModel.updateOne({ _id: orderId }, { status, assigned_driver: driverName });
+    const result = await orderModel.updateOne(
+      { _id: orderId },
+      { status, assigned_driver: driverName, driver_license_plate: licensePlatNumber },
+    );
     if (result) {
       return result;
     }

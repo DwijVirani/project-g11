@@ -118,3 +118,36 @@ tr {
 h1 {
   text-align: center;
 }
+
+.uploadContainer {
+  border: 1px solid white;
+  height: 150px;
+}
+
+.uploadForm {
+  width: 500px;
+  height: 200px;
+  border: 4px dashed #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.uploadInput {
+  margin-left: 60%;
+  margin-top: 5%;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.uploadButton {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}

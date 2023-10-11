@@ -9,10 +9,6 @@
   <body>
     {{#if errMsg}}
       <h1 style='color: white;'>{{errMsg}}</h1>
-    {{/if}}
-
-    {{#if noOrderMsg}}
-      <h1 style='color: white;'>{{noOrderMsg}}</h1>
     {{else}}
       <table width='100%'>
         <tr class='tableHeader'>
@@ -28,9 +24,6 @@
           <th>
             Status
           </th>
-          <th>
-            Accept Order
-          </th>
         </tr>
         <tr>
           <td>
@@ -45,13 +38,16 @@
           <td>
             <span>{{orderData.status}}</span>
           </td>
-          <td>
-            <form action='/mark-delivered/{{orderData._id}}' method='post'>
-              <button type='submit'>Mark as Delivered</button>
-            </form>
-          </td>
         </tr>
       </table>
+
+      <div class='formContainer'>
+        <form class='uploadForm' action='/mark-delivered/{{orderData._id}}' method='post' enctype='multipart/form-data'>
+          <label for='photo'>Upload Photo</label>
+          <input class='uploadInput' type='file' name='photo' />
+          <button type='submit'>Mark as Delivered</button>
+        </form>
+      </div>
     {{/if}}
   </body>
 </html>
