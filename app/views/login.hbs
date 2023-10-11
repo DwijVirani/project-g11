@@ -16,11 +16,11 @@
           <br /><br />
           <label for='password'>Password</label>
           <br />
-          <input type='text' name='password' />
+          <input type='password' name='password' />
           <br /><br />
         </div>
         {{#if errMsg}}
-          {{errMsg}}
+          <span style='color: crimson; text-align: center'>{{errMsg}}</span>
         {{/if}}
         <div class='loginBtnContainer'>
           <button class='loginBtn' type='submit'>Login</button>

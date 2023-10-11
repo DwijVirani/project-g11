@@ -8,8 +8,7 @@ const {
 
 const deliveryOrders = async (req, res) => {
   try {
-    const driverName = req.session.user.username;
-    const orderList = await deliveryOrdersService(driverName);
+    const orderList = await deliveryOrdersService();
     if (orderList && orderList.length > 0) {
       return res.render('dashboard', { layout: 'layout.hbs', orderList });
     } else {

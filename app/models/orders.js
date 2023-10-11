@@ -29,12 +29,20 @@ const orderSchema = new mongoose.Schema(
           type: String,
           required: true,
         },
+        unit_price: {
+          type: String,
+          required: true,
+        },
         restaurant: {
           type: String,
           required: true,
         },
       },
     ],
+    order_total: {
+      type: String,
+      required: true,
+    },
     assigned_driver: {
       type: String,
       required: false,
@@ -47,4 +55,4 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-module.exports = mongoose.model('order', orderSchema);
+module.exports = mongoose.model('orders_collection', orderSchema);
